@@ -12,6 +12,14 @@ use App\Http\Controllers\user\KatalogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PaymentController;
 
+//Route Register
+Route::get('/register', [AuthController::class, 'showRegistration'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+
+//Route Login
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
 //Route Admin
 Route::get('admin-dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
